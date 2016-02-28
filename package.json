@@ -1,0 +1,25 @@
+{
+  "name": "vue-semantic",
+  "version": "0.0.1",
+  "description": "Vue Components for the semantic ui library",
+  "main": "vue-semantic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CroudSupport/vue-semantic.git"
+  },
+  "keywords": [
+    "Vue",
+    "plugin",
+    "semantic",
+    "ui"
+  ],
+  "author": "Brock Reece",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CroudSupport/vue-semantic/issues"
+  },
+  "homepage": "https://github.com/CroudSupport/vue-semantic#readme"
+}
