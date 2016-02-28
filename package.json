@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Vue Components for the semantic ui library",
   "main": "vue-semantic.js",
+  "browserify": {
+    "transform": ["vueify"]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
