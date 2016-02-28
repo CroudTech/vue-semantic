@@ -21,7 +21,7 @@
 
 export default {
     props: ['element_id', 'field_name', 'field_value', 'data'],
-    data: () {
+    data() {
         return {
             element_id: '',
             field_name: '',

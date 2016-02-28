@@ -13,7 +13,7 @@
 
 export default {
     props: ['element_id', 'field_name', 'field_label', 'field_value', 'is_checked'],
-    data: () {
+    data() {
         return {
             element_id: '',
             field_name: '',
