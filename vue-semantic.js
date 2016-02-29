@@ -1,10 +1,10 @@
 var Checkbox = require('./src/Checkbox.vue'),
     Dropdown = require('./src/Dropdown.vue'),
     Message = require('./src/Message.vue'),
-    Modal = require('.src/Modal.vue'),
+    Modal = require('./src/Modal.vue'),
     Popup = require('./src/Popup.vue'),
     Radiobutton = require('./src/Radiobutton.vue'),
-    Statistic = require('.src/Statistic.vue');
+    Statistic = require('./src/Statistic.vue');
 
 
 module.exports = {
