@@ -11,6 +11,9 @@
     export default {
         props: {
             url: {},
+            fields: {
+                default: {}
+            },
         },
 
         ready() {
@@ -20,10 +23,7 @@
                     url: this.url,
                 },
 
-                fields: {
-                    results: 'data',
-                    title: 'name',
-                },
+                fields: this.fields,
 
                 onSelect(result) {
                     $this.$dispatch('user', result)
