@@ -12,7 +12,7 @@
                 <slot></slot>
             </div>
         </div>
-        <div class="actions">
+        <div v-if="approve || deny" class="actions">
             <div class="ui deny button">
                 Cancel
             </div>
