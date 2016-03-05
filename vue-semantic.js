@@ -1,5 +1,6 @@
 var Checkbox = require('./src/Checkbox.vue'),
     Dropdown = require('./src/Dropdown.vue'),
+    FormDropdown = require('./src/FormDropdown.vue'),
     Loading = require('./src/Loading.vue'),
     Message = require('./src/Message.vue'),
     Modal = require('./src/Modal.vue'),
@@ -8,11 +9,11 @@ var Checkbox = require('./src/Checkbox.vue'),
     Search = require('./src/Search.vue'),
     Statistic = require('./src/Statistic.vue');
 
-
 module.exports = {
     install: function (Vue, options) {
         Vue.component('semantic-checkbox', Checkbox);
         Vue.component('semantic-dropdown', Dropdown);
+        Vue.component('semantic-form-dropdown', FormDropdown);
         Vue.component('semantic-loader', Loading);
         Vue.component('semantic-message', Message);
         Vue.component('semantic-modal', Modal);
