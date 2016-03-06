@@ -1,27 +1,29 @@
-
-
 <template>
-
-<div class="ui checkbox">
-    <input type="checkbox" class="native" id="{{element_id}}" name="{{field_name}}}}" value="{{field_value}}" v-model="is_checked">
-    <label>{{field_label}}</label>
-</div>
-
+    <div :class="checkboxClasses">
+        <input type="checkbox" v-model="model">
+        <label>{{ label }}</label>
+    </div>
 </template>
 
 <script>
+    export default {
+        props: {
+            model: {},
+            label: {},
+            disabled: {},
+            type: {},
+        },
 
-export default {
-    props: ['element_id', 'field_name', 'field_label', 'field_value', 'is_checked'],
-    data() {
-        return {
-            element_id: '',
-            field_name: '',
-            field_label: '',
-            field_value: '',
-            is_checked: ''
-        }
+        computed: {
+            checkboxClasses() {
+                return {
+                    ui: true,
+                    checkbox: true,
+                    disabled: typeof this.disabled !== 'undefined',
+                    slider: this.type === 'slider',
+                    toggle: this.type === 'toggle',
+                }
+            },
+        },
     }
-}
-
 </script>
