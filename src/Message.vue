@@ -1,15 +1,22 @@
 <template>
     <div :class="messageClasses">
+        <i class="close icon" v-if="dismissable" @click="this.show=false"></i>
         <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        props: [
-            'size',
-            'type',
-        ],
+        props: {
+            size: {},
+            type: {},
+            show: {
+                default: true,
+            },
+            dismissable: {
+                default: false,
+            },
+        },
         computed: {
             messageClasses() {
                 return {
