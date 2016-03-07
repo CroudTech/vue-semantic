@@ -1,7 +1,7 @@
 <template>
     <div class="ui search">
         <div class="ui input">
-            <input class="prompt" type="text" placeholder="Add User">
+            <input class="prompt" type="text" :placeholder="placeholder">
         </div>
         <div class="results"></div>
     </div>
@@ -11,6 +11,9 @@
     export default {
         props: {
             url: {},
+            placeholder: {
+                default: 'Search...',
+            },
             fields: {
                 default: {}
             },
