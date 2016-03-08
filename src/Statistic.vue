@@ -32,6 +32,7 @@
                     aligned: true,
                     padded: true,
                     segment: true,
+                    basic: !this.colour && !this.inverted,
                 }
 
                 if (this.colour) {
