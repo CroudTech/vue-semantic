@@ -17,6 +17,11 @@
             fields: {
                 default: {}
             },
+            sanitize: {
+                default: function(response) {
+                    return response
+                }
+            },
         },
 
         ready() {
@@ -24,12 +29,13 @@
             $(this.$el).search({
                 apiSettings: {
                     url: this.url,
+                    onResponse: this.sanitize,
                 },
 
                 fields: this.fields,
 
                 onSelect(result) {
-                    $this.$dispatch('user', result)
+                    $this.$dispatch('select', result)
                 },
             })
         }
