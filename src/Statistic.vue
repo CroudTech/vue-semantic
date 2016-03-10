@@ -18,6 +18,7 @@
             colour: {},
             icon: {},
             inverted: {},
+            size: {},
             label: {
                 required: true,
             },
@@ -75,6 +76,10 @@
 
                 if (this.inverted) {
                     classes.inverted = true
+                }
+
+                if (this.size) {
+                    classes[this.size] = true
                 }
 
                 return classes
