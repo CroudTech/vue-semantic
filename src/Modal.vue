@@ -54,6 +54,7 @@
                     ui: true,
                     small: this.size === 'small',
                     large: this.size === 'large',
+                    long: true,
                     modal: true,
 
                 }
