@@ -1,4 +1,5 @@
-var Checkbox = require('./src/Checkbox.vue'),
+var Accordion = require('./src/Accordion.vue'),
+    Checkbox = require('./src/Checkbox.vue'),
     Dropdown = require('./src/Dropdown.vue'),
     FormDropdown = require('./src/FormDropdown.vue'),
     Loading = require('./src/Loading.vue'),
@@ -11,6 +12,7 @@ var Checkbox = require('./src/Checkbox.vue'),
 
 module.exports = {
     install: function (Vue, options) {
+        Vue.component('semantic-accordion', Accordion);
         Vue.component('semantic-checkbox', Checkbox);
         Vue.component('semantic-dropdown', Dropdown);
         Vue.component('semantic-form-dropdown', FormDropdown);
