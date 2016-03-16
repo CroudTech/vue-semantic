@@ -15,7 +15,7 @@
         props: {
             items: {},
             openLast: {
-                default: fault,
+                default: {},
             },
         },
 
