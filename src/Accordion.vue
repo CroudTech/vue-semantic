@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    export module {
+    export default {
         props: {
             items: {},
             openLast: {
