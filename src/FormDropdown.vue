@@ -22,6 +22,9 @@
             search: {},
             inline: {},
             multiple: {},
+            allow_additions : {
+                default : false
+            },
             value_field: {
                 default: 'id',
             },
@@ -54,12 +57,16 @@
         },
 
         ready() {
-            $(this.$el).dropdown()
+            $(this.$el).dropdown({
+                allowAdditions : this.allow_additions
+            })
         },
 
         watch: {
             model() {
-                $(this.$el).dropdown()
+                $(this.$el).dropdown({
+                    allowAdditions : this.allow_additions
+                })
             },
         },
     }
