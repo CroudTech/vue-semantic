@@ -69,5 +69,11 @@
                 })
             },
         },
+
+        events: {
+            'clear-dropdown'() {
+                $(this.$el).dropdown('clear')
+            }
+        },
     }
 </script>
