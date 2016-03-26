@@ -1,6 +1,6 @@
 <template>
     <div :class="checkboxClasses">
-        <input type="checkbox" v-model="model">
+        <input type="checkbox" v-model="model" @click="notify">
         <label>{{ label }}</label>
     </div>
 </template>
@@ -25,5 +25,13 @@
                 }
             },
         },
+
+        methods : {
+            notify(event) {
+                this.$nextTick(() => {
+                    this.$dispatch('checkbox-clicked', !this.model, event);
+                })
+            }
+        }
     }
 </script>
