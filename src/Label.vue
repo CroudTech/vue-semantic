@@ -1,9 +1,6 @@
 <template>
     <div :class="labelClasses">
         <slot></slot>
-        <div class="detail">
-            <slot name="detail"></slot>
-        </div>
     </div>
 </template>
 
