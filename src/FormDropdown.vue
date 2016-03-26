@@ -1,8 +1,8 @@
 <template>
     <div :class="dropdownClasses">
         <input type="hidden" v-model="model">
-        <i class="dropdown icon"></i>
         <div class="default text"></div>
+        <i class="dropdown icon"></i>
         <div class="menu dropdown_menu">
             <div v-for="option in items" class="item" data-value="{{ option.id }}" data-text="{{ option.name }}">{{ option.name}}</div>
         </div>
@@ -68,6 +68,12 @@
                     allowAdditions : this.allow_additions
                 })
             },
+        },
+
+        events: {
+            'clear-dropdown'() {
+                $(this.$el).dropdown('clear')
+            }
         },
     }
 </script>
