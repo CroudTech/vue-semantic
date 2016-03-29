@@ -22,6 +22,9 @@
             search: {},
             inline: {},
             multiple: {},
+            full_text_search : {
+                default : false
+            },
             allow_additions : {
                 default : false
             },
@@ -58,14 +61,18 @@
 
         ready() {
             $(this.$el).dropdown({
-                allowAdditions : this.allow_additions
+                allowAdditions : this.allow_additions,
+                onChange : (value, text, $choice) => {
+                    this.$dispatch('dropdown-selected', value, text, $choice)
+                }
             })
         },
 
         watch: {
             model() {
                 $(this.$el).dropdown({
-                    allowAdditions : this.allow_additions
+                    allowAdditions : this.allow_additions,
+                    fullTextSearch : this.full_text_search
                 })
             },
         },
