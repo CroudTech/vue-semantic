@@ -4,6 +4,7 @@ var Accordion = require('./src/Accordion.vue'),
     Divider = require('./src/Divider.vue'),
     Dropdown = require('./src/Dropdown.vue'),
     FormDropdown = require('./src/FormDropdown.vue'),
+    Icon = require('./src/elements/Icon.vue'),
     Label = require('./src/Label.vue'),
     Loading = require('./src/Loading.vue'),
     Message = require('./src/Message.vue'),
@@ -22,6 +23,7 @@ module.exports = {
         Vue.component('semantic-divider', Divider);
         Vue.component('semantic-dropdown', Dropdown);
         Vue.component('semantic-form-dropdown', FormDropdown);
+        Vue.component('semantic-icon', Icon);
         Vue.component('semantic-label', Label);
         Vue.component('semantic-loader', Loading);
         Vue.component('semantic-message', Message);
