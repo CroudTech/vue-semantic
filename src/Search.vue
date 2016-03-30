@@ -11,6 +11,7 @@
     export default {
         props: {
             url: {},
+            local: {},
             placeholder: {
                 default: 'Search...',
             },
@@ -25,19 +26,24 @@
         },
 
         ready() {
-            const $this = this
-            $(this.$el).search({
-                apiSettings: {
+            const $this = this,
+                searchOptions = {
+                    onSelect(result) {
+                        $this.$dispatch('select', result)
+                    },
+                }
+
+            if (typeof this.local !== 'undefined') {
+                searchOptions.source = this.local
+            } else {
+                searchOptions.apiSettings = {
                     url: this.url,
                     onResponse: this.sanitize,
-                },
+                }
+                searchOptions.fields = this.fields
+            }
 
-                fields: this.fields,
-
-                onSelect(result) {
-                    $this.$dispatch('select', result)
-                },
-            })
+            $(this.$el).search(searchOptions)
         }
     }
 </script>
