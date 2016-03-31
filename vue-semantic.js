@@ -30,7 +30,7 @@ module.exports = {
         Vue.component('semantic-modal', Modal);
         Vue.component('semantic-popup', Popup);
         Vue.component('semantic-radio', Radiobutton);
-        Vue.component('semantic-Reveal', Reveal);
+        Vue.component('semantic-reveal', Reveal);
         Vue.component('semantic-search', Search);
         Vue.component('semantic-statistic', Statistic);
 
