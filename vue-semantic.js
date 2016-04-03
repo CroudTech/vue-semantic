@@ -11,6 +11,7 @@ var Accordion = require('./src/Accordion.vue'),
     Modal = require('./src/Modal.vue'),
     Popup = require('./src/Popup.vue'),
     Radiobutton = require('./src/Radiobutton.vue'),
+    Rail = require('./src/elements/Rail.vue'),
     Reveal = require('./src/Reveal.vue'),
     Search = require('./src/Search.vue'),
     Statistic = require('./src/Statistic.vue');
@@ -30,6 +31,7 @@ module.exports = {
         Vue.component('semantic-modal', Modal);
         Vue.component('semantic-popup', Popup);
         Vue.component('semantic-radio', Radiobutton);
+        Vue.component('semantic-rail', Rail);
         Vue.component('semantic-reveal', Reveal);
         Vue.component('semantic-search', Search);
         Vue.component('semantic-statistic', Statistic);
