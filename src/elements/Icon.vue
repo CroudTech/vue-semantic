@@ -39,7 +39,9 @@
                 }
 
                 if (typeof this.icon !== 'undefined') {
-                    classes[this.icon] = true
+                    this.icon.split(" ").map((split) => {
+                        classes[split] = true
+                    })
                 }
 
                 return this.commonClasses(classes)
