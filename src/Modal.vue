@@ -48,6 +48,12 @@
             },
         },
 
+        events : {
+            'refresh-modal' : function() {
+                $(this.$el).modal("refresh");
+            }
+        },
+
         computed: {
             modalClasses() {
                 return {
@@ -83,12 +89,15 @@
                 onDeny: $this.deny ? $this.deny : function() {
                     $this.active = false
                 },
+                onVisible: function () {
+                    $(this.$el).modal("refresh");
+                }
             });
         },
 
         watch: {
             active() {
-                $(this.$el).modal('toggle')
+                $(this.$el).modal("refresh").modal('toggle')
             },
         },
     }

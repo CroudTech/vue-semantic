@@ -59,21 +59,25 @@
             },
         },
 
+        methods : {
+            loadDropdown () {
+                $(this.$el).dropdown({
+                    allowAdditions : this.allow_additions,
+                    fullTextSearch : this.full_text_search,
+                    onChange : (value, text, $choice) => {
+                        this.$dispatch('dropdown-selected', value, text, $choice)
+                    }
+                })
+            }
+        },
+
         ready() {
-            $(this.$el).dropdown({
-                allowAdditions : this.allow_additions,
-                onChange : (value, text, $choice) => {
-                    this.$dispatch('dropdown-selected', value, text, $choice)
-                }
-            })
+            this.loadDropdown()
         },
 
         watch: {
             model() {
-                $(this.$el).dropdown({
-                    allowAdditions : this.allow_additions,
-                    fullTextSearch : this.full_text_search
-                })
+                this.loadDropdown()
             },
         },
 
