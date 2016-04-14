@@ -46,6 +46,9 @@
             deny: {
                 type: Function,
             },
+            observeChanges: {
+                default: true,
+            },
         },
 
         events : {
@@ -91,7 +94,8 @@
                 },
                 onVisible: function () {
                     $(this.$el).modal("refresh");
-                }
+                },
+                observeChanges: this.observeChanges,
             });
         },
 
