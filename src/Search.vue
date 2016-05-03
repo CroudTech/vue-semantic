@@ -13,7 +13,7 @@
             url: {},
             local: {},
             searchDelay: {
-                default: 500,
+                default: 100,
             },
             placeholder: {
                 default: 'Search...',
