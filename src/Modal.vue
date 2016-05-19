@@ -12,19 +12,23 @@
                 <slot></slot>
             </div>
         </div>
-        <div v-if="approve || deny" class="actions">
-            <div class="ui deny button">
-                Cancel
+        <slot name="actions">
+            <div v-if="approve || deny" class="actions">
+                <div class="ui deny button">
+                    Cancel
+                </div>
+                <div class="ui yellow approve right labeled icon button">
+                    Continue
+                    <i class="checkmark icon"></i>
+                </div>
             </div>
-            <div class="ui yellow approve right labeled icon button">
-                Continue
-                <i class="checkmark icon"></i>
-            </div>
-        </div>
+        </slot>
     </div>
 </template>
 
 <script>
+    import _ from 'underscore'
+
     export default {
         props: {
             title: {
@@ -46,6 +50,7 @@
             deny: {
                 type: Function,
             },
+            settings : () => {}
         },
 
         events : {
@@ -60,6 +65,7 @@
                     ui: true,
                     small: this.size === 'small',
                     large: this.size === 'large',
+                    fullscreen: this.size === 'fullscreen',
                     long: true,
                     modal: true,
 
@@ -81,7 +87,7 @@
 
         ready() {
             const $this = this
-            $(this.$el).modal({
+            const settings = _.extend({
                 onHide: $this.hide.bind($this),
                 onApprove: $this.approve ? $this.approve : function() {
                     $this.active = false
@@ -92,7 +98,9 @@
                 onVisible: function () {
                     $(this.$el).modal("refresh");
                 }
-            });
+            }, this.settings)
+
+            $(this.$el).modal(settings);
         },
 
         watch: {

@@ -34,6 +34,7 @@
             title_field: {
                 default: 'name',
             },
+            settings : () => {}
         },
 
         computed: {

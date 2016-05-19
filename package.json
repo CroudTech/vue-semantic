@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/CroudSupport/vue-semantic/issues"
   },
-  "homepage": "https://github.com/CroudSupport/vue-semantic#readme"
+  "homepage": "https://github.com/CroudSupport/vue-semantic#readme",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
 }
