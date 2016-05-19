@@ -12,6 +12,9 @@
         props: {
             url: {},
             local: {},
+            searchDelay: {
+                default: 100,
+            },
             placeholder: {
                 default: 'Search...',
             },
@@ -31,6 +34,7 @@
                     onSelect(result) {
                         $this.$dispatch('select', result)
                     },
+                    searchDelay: this.searchDelay,
                 }
 
             if (typeof this.local !== 'undefined') {

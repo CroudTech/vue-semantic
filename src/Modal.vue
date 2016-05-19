@@ -50,7 +50,9 @@
             deny: {
                 type: Function,
             },
-            settings : () => {}
+            observeChanges: {
+                default: true,
+            },
         },
 
         events : {
@@ -97,9 +99,11 @@
                 },
                 onVisible: function () {
                     $(this.$el).modal("refresh");
-                }
-            }, this.settings)
 
+                },
+                 observeChanges: this.observeChanges,
+            }, this.settings)
+            
             $(this.$el).modal(settings);
         },
 
