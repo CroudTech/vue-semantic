@@ -1,9 +1,11 @@
 <template>
     <div :class="modalClasses">
         <i class="close icon"></i>
-        <div v-if="title" class="header">
-            {{ title }}
-        </div>
+        <slot name="header">
+            <div v-if="title" class="header">
+                {{ title }}
+            </div>
+        </slot>
         <div :class="contentClasses">
             <div v-if="icon" class="ui medium image">
                 <i class="user icon"></i>
@@ -53,6 +55,10 @@
             observeChanges: {
                 default: true,
             },
+            settings : {
+                type: Object,
+                default: {}
+            }
         },
 
         events : {
@@ -103,12 +109,13 @@
                 },
                  observeChanges: this.observeChanges,
             }, this.settings)
-            
+
             $(this.$el).modal(settings);
         },
 
         watch: {
             active() {
+                    console.log('asddasdsa', this.active);
                 $(this.$el).modal("refresh").modal('toggle')
             },
         },

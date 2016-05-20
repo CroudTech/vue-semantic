@@ -10,6 +10,8 @@
 </template>
 
 <script>
+    import _ from 'underscore'
+
     export default {
         props: {
             options: {
@@ -34,7 +36,10 @@
             title_field: {
                 default: 'name',
             },
-            settings : () => {}
+            settings : {
+                type : Object,
+                default: () => {}
+            }
         },
 
         computed: {
@@ -62,13 +67,16 @@
 
         methods : {
             loadDropdown () {
-                $(this.$el).dropdown({
+
+                const settings = _.extend({
                     allowAdditions : this.allow_additions,
                     fullTextSearch : this.full_text_search,
                     onChange : (value, text, $choice) => {
                         this.$dispatch('dropdown-selected', value, text, $choice)
                     }
-                })
+                }, this.settings)
+
+                $(this.$el).dropdown(settings)
             }
         },
 
