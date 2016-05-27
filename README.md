@@ -36,5 +36,5 @@ plugins: [
 And include the semantic js + css at the top of your main.js file
 ```
 import 'path/to/semantic.css'
-import 'path/to/semantic.min'
+import 'path/to/semantic.js'
 ```
