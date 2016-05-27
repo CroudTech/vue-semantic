@@ -1,6 +1,6 @@
 <template>
     <div :class="dropdownClasses">
-        <input type="hidden" v-model="model">
+        <input type="hidden" :name="name" v-model="model">
         <div class="default text">{{ placeholder }}</div>
         <i class="dropdown icon"></i>
         <div class="menu dropdown_menu">
@@ -21,6 +21,7 @@
                 required: true,
             },
             placeholder: {},
+            name: {},
             fluid: {},
             search: {},
             inline: {},
