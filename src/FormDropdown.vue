@@ -1,7 +1,7 @@
 <template>
     <div :class="dropdownClasses">
         <input type="hidden" v-model="model">
-        <div class="default text"></div>
+        <div class="default text">{{ placeholder }}</div>
         <i class="dropdown icon"></i>
         <div class="menu dropdown_menu">
             <div v-for="option in items" class="item" data-value="{{ option.id }}" data-text="{{ option.name }}">{{ option.name}}</div>
@@ -20,6 +20,7 @@
             model: {
                 required: true,
             },
+            placeholder: {},
             fluid: {},
             search: {},
             inline: {},
