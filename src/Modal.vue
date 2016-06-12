@@ -3,7 +3,7 @@
         <i class="close icon"></i>
         <slot name="header">
             <div v-if="title" class="header">
-                {{ title }}
+                {{{ title }}}
             </div>
         </slot>
         <div :class="contentClasses">
@@ -115,7 +115,6 @@
 
         watch: {
             active() {
-                    console.log('asddasdsa', this.active);
                 $(this.$el).modal("refresh").modal('toggle')
             },
         },
