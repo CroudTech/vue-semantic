@@ -1,6 +1,6 @@
 <template>
     <div :class="modalClasses">
-        <i class="close icon"></i>
+        <i v-if="settings.closeable && settings.closeable_button"  class="close icon"></i>
         <slot name="header">
             <div v-if="title" class="header">
                 {{{ title }}}

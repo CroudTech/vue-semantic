@@ -70,7 +70,7 @@
         methods : {
             loadDropdown () {
 
-                const settings = _.extend({
+                const settings = _.extend({}, {
                     allowAdditions : this.allow_additions,
                     fullTextSearch : this.full_text_search,
                     onChange : (value, text, $choice) => {
