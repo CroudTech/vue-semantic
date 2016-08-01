@@ -1,6 +1,6 @@
 <template>
     <div :class="modalClasses">
-        <i v-if="settings.closeable && settings.closeable_button"  class="close icon"></i>
+        <i v-if="canClose" class="close icon"></i>
         <slot name="header">
             <div v-if="title" class="header">
                 {{{ title }}}
@@ -57,7 +57,7 @@
             },
             settings : {
                 type: Object,
-                default: {}
+                default: () => {}
             }
         },
 
@@ -68,6 +68,10 @@
         },
 
         computed: {
+            canClose()
+            {
+                return this.settings && this.settings.closeable && this.settings && this.settings.closeable_button
+            },
             modalClasses() {
                 return {
                     ui: true,
