@@ -1,7 +1,7 @@
 
 <template>
 <span>
-    <div class="ui form">
+  <div class="ui form">
     <div class="grouped fields">
       <div class="field" v-for="option in data">
         <div class="ui radio checkbox">
