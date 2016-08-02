@@ -1,8 +1,6 @@
 
 <template>
 <span>
-    <pre>{{field_value | json}}</pre>
-    <pre>{{data | json}}</pre>
     <div class="ui form">
     <div class="grouped fields">
       <div class="field" v-for="option in data">
