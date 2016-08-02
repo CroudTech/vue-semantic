@@ -1,7 +1,7 @@
 <template>
     <div :class="checkboxClasses">
         <input type="checkbox" v-model="model" @click="notify">
-        <label>{{ (model ? labelChecked : label) }}</label>
+        <label>{{ ( model && labelChecked ? labelChecked : label) }}</label>
     </div>
 </template>
 
