@@ -8,7 +8,7 @@
       <div class="field" v-for="option in data">
         <div class="ui radio checkbox">
           <input type="radio" name="{{field_name}}" class="native" @click.prevent="checkOption(option.value)">
-          <label>option.label</label>
+          <label>{{{option.label}}}</label>
         </div>
       </div>
     </div>
@@ -20,19 +20,17 @@
 <script>
 
 export default {
-    props: ['element_id', 'field_name', 'field_value', 'data'],
-    data() {
-        return {
-            element_id: '',
-            field_name: '',
-            field_label: '',
-            field_value: '',
-            data: []
-        }
+
+      props: {
+        element_id: {},
+        field_name: {},
+        field_value: {},
+        data: {}
     },
+
     methods: {
         checkOption(value) {
-            this.field_value = valiue;
+            this.field_value = value;
         }
     },
     computed: {
