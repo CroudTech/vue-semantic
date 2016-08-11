@@ -84,6 +84,9 @@
                 }
             },
             contentClasses() {
+                if (this.settings.content_classes) 
+                    return this.settings.content_classes
+
                 return {
                     image: true,
                     content: true,
