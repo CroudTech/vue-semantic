@@ -84,7 +84,7 @@
                 }
             },
             contentClasses() {
-                if (this.settings.content_classes) 
+                if (this.settings && this.settings.content_classes) 
                     return this.settings.content_classes
 
                 return {

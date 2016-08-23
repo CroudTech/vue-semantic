@@ -35,6 +35,8 @@ module.exports = {
         Vue.component('semantic-reveal', Reveal);
         Vue.component('semantic-search', Search);
         Vue.component('semantic-statistic', Statistic);
+        
+        if (!$.fn.transition) return;
 
         var emphasis = [
             'flash',
