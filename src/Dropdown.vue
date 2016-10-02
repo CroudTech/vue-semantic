@@ -9,8 +9,8 @@
 
 <template>
 
-<div id="{{element_id}}" class="ui fluid search selection dropdown">
-    <input type="hidden" name="{{name}}" value="{{selection}}">
+<div v-bind:id="element_id" class="ui fluid search selection dropdown">
+    <input type="hidden" v-bind:name="name" value="{{selection}}">
     <i class="dropdown icon"></i>
     <div class="default text">{{default_text}}</div>
     <div class="menu dropdown_menu">
@@ -39,19 +39,19 @@ export default {
     mounted() {
         this.$nextTick(() => {
 
-        $('#' + this.element_id).dropdown({
+            $('#' + this.element_id).dropdown({
 
-            transition: this.transition,
+                transition: this.transition,
 
-            fullTextSearch : this.full_text_search,
+                fullTextSearch: this.full_text_search,
 
-            onChange: (value, text, $choice) => {
+                onChange: (value, text, $choice) => {
 
-                if (this.selection) this.selection = value;
+                    if (this.selection) this.selection = value;
 
                     this.$emit('dropdown-changed', value);
-            }
-        });
+                }
+            });
         })
     }
 }
