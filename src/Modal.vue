@@ -3,7 +3,7 @@
         <i v-if="canClose" class="close icon"></i>
         <slot name="header">
             <div v-if="title" class="header">
-                {{{ title }}}
+                {{ title }}
             </div>
         </slot>
         <div :class="contentClasses">
@@ -118,7 +118,7 @@
             }, this.settings)
 
             this.$nextTick(() => {
-            $(this.$el).modal(settings);
+                $(this.$el).modal(settings);
             })
         },
 
