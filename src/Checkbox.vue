@@ -30,7 +30,7 @@
         methods : {
             notify(event) {
                 this.$nextTick(() => {
-                    this.$dispatch('checkbox-clicked', !this.model, event);
+                    this.$emit('checkbox-clicked', !this.model, event);
                 })
             }
         }

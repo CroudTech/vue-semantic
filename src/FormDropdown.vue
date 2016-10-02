@@ -76,7 +76,7 @@
                     allowAdditions : this.allow_additions,
                     fullTextSearch : this.full_text_search,
                     onChange : (value, text, $choice) => {
-                        this.$dispatch('dropdown-selected', value, text, $choice)
+                        this.$emit('dropdown-selected', value, text, $choice)
                     }
                 }, this.settings)
 

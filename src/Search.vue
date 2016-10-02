@@ -32,7 +32,7 @@
             const $this = this,
                 searchOptions = {
                     onSelect(result) {
-                        $this.$dispatch('select', result)
+                        $this.$emit('select', result)
                     },
                     searchDelay: this.searchDelay,
                 }
@@ -48,7 +48,7 @@
             }
 
             this.$nextTick(() => {
-            $(this.$el).search(searchOptions)
+                $(this.$el).search(searchOptions)
             })
         }
     }
