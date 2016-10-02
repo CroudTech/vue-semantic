@@ -28,7 +28,7 @@
             },
         },
 
-        ready() {
+        mounted() {
             const $this = this,
                 searchOptions = {
                     onSelect(result) {
@@ -47,7 +47,9 @@
                 searchOptions.fields = this.fields
             }
 
+            this.$nextTick(() => {
             $(this.$el).search(searchOptions)
+            })
         }
     }
 </script>

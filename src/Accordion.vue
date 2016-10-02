@@ -19,12 +19,14 @@
             },
         },
 
-        ready() {
-            if (this.openLast) {
-                $(this.$el).accordion('open', this.items.length)
-            } else {
-                $(this.$el).accordion('open', 0)
-            }
+        mounted() {
+            this.$nextTick(() => {
+                if (this.openLast) {
+                    $(this.$el).accordion('open', this.items.length)
+                } else {
+                    $(this.$el).accordion('open', 0)
+                }
+            })
         },
     }
 </script>

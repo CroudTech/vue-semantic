@@ -80,11 +80,14 @@
                     }
                 }, this.settings)
 
+
+                this.$nextTick(() => {
                 $(this.$el).dropdown(settings)
+                })
             }
         },
 
-        ready() {
+        mounted() {
             this.loadDropdown()
         },
 

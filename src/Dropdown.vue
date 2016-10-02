@@ -36,7 +36,8 @@ export default {
         }
     },
 
-    ready() {
+    mounted() {
+        this.$nextTick(() => {
 
         $('#' + this.element_id).dropdown({
 
@@ -48,10 +49,10 @@ export default {
 
                 if (this.selection) this.selection = value;
 
-                this.$dispatch('dropdown-changed', value);
+                    this.$emit('dropdown-changed', value);
             }
         });
-
+        })
     }
 }
 

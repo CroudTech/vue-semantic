@@ -100,7 +100,7 @@
             },
         },
 
-        ready() {
+        mounted() {
             const $this = this
             const settings = _.extend({
                 onHide: $this.hide.bind($this),
@@ -117,7 +117,9 @@
                  observeChanges: this.observeChanges,
             }, this.settings)
 
+            this.$nextTick(() => {
             $(this.$el).modal(settings);
+            })
         },
 
         watch: {
