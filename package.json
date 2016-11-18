@@ -1,6 +1,6 @@
 {
   "name": "vue-semantic",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Vue Components for the semantic ui library",
   "main": "vue-semantic.js",
   "browserify": {
