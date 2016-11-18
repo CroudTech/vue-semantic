@@ -55,7 +55,7 @@
                     fluid: typeof this.fluid !== 'undefined' ? true : false,
                     multiple: typeof this.multiple !== 'undefined' ? true : false,
                     inline: typeof this.inline !== 'undefined' ? true : false,
-                    disabled: typeof this.disabled !== 'undefined' ? true : false,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled === true ? true : false,
                 }
             },
 
