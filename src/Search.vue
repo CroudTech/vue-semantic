@@ -26,6 +26,22 @@
                     return response
                 }
             },
+            auth: {
+                coerce (val) {
+                    return $.extend({
+                        token: false,
+                        type: 'Bearer',
+                        headerKey: 'Authorization',
+                    }, val);
+                },
+                default() {
+                    return {
+                        token: false,
+                        type: 'Bearer',
+                        headerKey: 'Authorization',
+                    }
+                },
+            },
         },
 
         ready() {
@@ -43,6 +59,12 @@
                 searchOptions.apiSettings = {
                     url: this.url,
                     onResponse: this.sanitize,
+                    beforeXHR (xhr) {
+                        if($this.auth.token !== false) {
+                            xhr.setRequestHeader ($this.auth.headerKey, `${$this.auth.type} ${$this.auth.token}`);
+                        }
+                        return xhr
+                    },
                 }
                 searchOptions.fields = this.fields
             }
