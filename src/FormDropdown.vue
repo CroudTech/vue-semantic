@@ -1,10 +1,10 @@
 <template>
     <div :class="dropdownClasses">
-        <input type="hidden" :name="name" v-model="model">
+        <input type="hidden" :name="name" v-model="value">
         <div class="default text">{{ placeholder }}</div>
         <i class="dropdown icon"></i>
         <div class="menu dropdown_menu">
-            <div v-for="option in items" class="item" data-value="{{ option.id }}" data-text="{{ option.name }}">{{ option.name}}</div>
+            <div v-for="option in items" class="item" :data-value="option.id" :data-text="option.name">{{ option.name}}</div>
         </div>
     </div>
 </template>
@@ -17,7 +17,7 @@
             options: {
                 required: true,
             },
-            model: {
+            value: {
                 required: true,
             },
             placeholder: {},
@@ -76,7 +76,7 @@
                     allowAdditions : this.allow_additions,
                     fullTextSearch : this.full_text_search,
                     onChange : (value, text, $choice) => {
-                        this.$dispatch('dropdown-selected', value, text, $choice)
+                        this.$emit('input', value)
                     }
                 }, this.settings)
 
@@ -84,7 +84,7 @@
             }
         },
 
-        ready() {
+        mounted() {
             this.loadDropdown()
         },
 
