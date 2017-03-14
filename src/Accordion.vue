@@ -15,13 +15,13 @@
         props: {
             items: {},
             openLast: {
-                default: {},
+                default: false,
             },
         },
 
-        ready() {
+        mounted() {
             if (this.openLast) {
-                $(this.$el).accordion('open', this.items.length)
+                $(this.$el).accordion('open', this.items.length -1)
             } else {
                 $(this.$el).accordion('open', 0)
             }
