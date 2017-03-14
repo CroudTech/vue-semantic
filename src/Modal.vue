@@ -2,9 +2,7 @@
     <div :class="modalClasses">
         <i v-if="canClose" class="close icon"></i>
         <slot name="header">
-            <div v-if="title" class="header">
-                {{{ title }}}
-            </div>
+            <div v-if="title" class="header" v-html="title"></div>
         </slot>
         <div :class="contentClasses">
             <div v-if="icon" class="ui medium image">
@@ -32,6 +30,10 @@
     import _ from 'underscore'
 
     export default {
+        model: {
+            prop: 'active',
+        },
+
         props: {
             title: {
                 type: String,
@@ -84,7 +86,7 @@
                 }
             },
             contentClasses() {
-                if (this.settings && this.settings.content_classes) 
+                if (this.settings && this.settings.content_classes)
                     return this.settings.content_classes
 
                 return {
@@ -96,19 +98,19 @@
 
         methods: {
             hide() {
-                this.active = false
+                this.$emit('input', false)
             },
         },
 
-        ready() {
+        mounted() {
             const $this = this
             const settings = _.extend({
                 onHide: $this.hide.bind($this),
                 onApprove: $this.approve ? $this.approve : function() {
-                    $this.active = false
+                    $this.$emit('input', false)
                 },
                 onDeny: $this.deny ? $this.deny : function() {
-                    $this.active = false
+                    $this.$emit('input', false)
                 },
                 onVisible: function () {
                     $(this.$el).modal("refresh");
