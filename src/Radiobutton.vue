@@ -4,7 +4,7 @@
             <div class="field" v-for="option in data">
                 <div class="ui radio checkbox">
                     <input :disabled="disabled" v-model="model" type="radio" :value="option.value">
-                    <label>{{{option.label}}}</label>
+                    <label>{{option.label}}</label>
                 </div>
             </div>
         </div>

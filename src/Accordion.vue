@@ -1,5 +1,5 @@
 <template>
-    <div class="ui styled fluid accordion">
+    <div class="ui accordion" :class="{ 'styled': styled, 'fluid': fluid}">
         <span v-for="item in items">
             <div class="title">
                 <i class="dropdown icon"></i>
@@ -17,14 +17,25 @@
             openLast: {
                 default: false,
             },
+            styled: {
+                default: true,
+            },
+            fluid: {
+                default: true,
+            },
+            settings: {
+                type: Object,
+                default() {
+                    return {};
+                }
+            },
         },
-
-        mounted() {
-            if (this.openLast) {
-                $(this.$el).accordion('open', this.items.length -1)
-            } else {
-                $(this.$el).accordion('open', 0)
+        data() {
+            return {
             }
+        },
+        mounted() {
+            $(this.$el).accordion(this.settings).accordion('open', this.openLast ? this.items.length -1 : 0)
         },
     }
 </script>

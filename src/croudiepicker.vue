@@ -368,7 +368,6 @@
                 this.show()
             },
             'filter-change'(filter) {
-
                 this.currentfilter = filter
                 this.new_filter_name = filter.name
                 this.selected = filter.rules.data[0].users.data

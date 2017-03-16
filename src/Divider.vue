@@ -15,7 +15,6 @@
             section: {},
             vertical: {},
         },
-
         computed: {
             dividerClasses() {
                 return {

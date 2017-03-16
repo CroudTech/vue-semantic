@@ -44,11 +44,11 @@
             },
         },
 
-        ready() {
+        mounted() {
             const $this = this,
                 searchOptions = {
                     onSelect(result) {
-                        $this.$dispatch('select', result)
+                        $this.$emit('select', result)
                     },
                     searchDelay: this.searchDelay,
                 }

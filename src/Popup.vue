@@ -93,7 +93,7 @@
             },
         },
 
-        ready() {
+        mounted() {
             const $this = this
             const settings = _.extend({
                 onHide: $this.hide.bind($this),

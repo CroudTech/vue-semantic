@@ -1,12 +1,15 @@
 <template>
     <div :class="checkboxClasses">
-        <input type="checkbox" v-model="model" @click="notify">
+        <input type="checkbox" v-model="checkboxValue" @change="notify">
         <label>{{ ( model && labelChecked ? labelChecked : label) }}</label>
     </div>
 </template>
 
 <script>
     export default {
+        model: {
+            prop: 'model'
+        },
         props: {
             model: {},
             label: {},
@@ -14,7 +17,6 @@
             disabled: {},
             type: {},
         },
-
         computed: {
             checkboxClasses() {
                 return {
@@ -25,12 +27,15 @@
                     toggle: this.type === 'toggle',
                 }
             },
+            checkboxValue() {
+                return this.model
+            },
         },
-
         methods : {
             notify(event) {
                 this.$nextTick(() => {
-                    this.$dispatch('checkbox-clicked', !this.model, event);
+                    this.$emit('checkbox-clicked', !event.srcElement.checked, event);
+                    this.$emit('input', event.srcElement.checked);
                 })
             }
         }
