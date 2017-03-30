@@ -1,7 +1,7 @@
 <template>
     <div :class="checkboxClasses">
-        <input type="checkbox" v-model="checkboxValue" @change="notify">
-        <label>{{ ( model && labelChecked ? labelChecked : label) }}</label>
+        <input :name="name" type="checkbox" v-model="checkboxValue" @change="notify">
+        <label @click="toggle">{{ ( model && labelChecked ? labelChecked : label) }}</label>
     </div>
 </template>
 
@@ -16,6 +16,7 @@
             labelChecked: {},
             disabled: {},
             type: {},
+            name: {},
         },
         computed: {
             checkboxClasses() {
@@ -37,6 +38,9 @@
                     this.$emit('checkbox-clicked', !event.srcElement.checked, event);
                     this.$emit('input', event.srcElement.checked);
                 })
+            },
+            toggle(e) {
+                this.$emit('input', !this.checkboxValue);
             }
         }
     }

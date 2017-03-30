@@ -77,6 +77,7 @@
                     fullTextSearch : this.full_text_search,
                     onChange : (value, text, $choice) => {
                         this.$emit('input', value)
+                        this.$emit('dropdown-selected', value)
                     }
                 }, this.settings)
 
@@ -89,8 +90,15 @@
         },
 
         watch: {
-            model() {
-                this.loadDropdown()
+            value() {
+                this.$nextTick(() => {
+                    this.loadDropdown()
+                })
+            },
+            options() {
+                this.$nextTick(() => {
+                    this.loadDropdown()
+                })
             },
         },
 
