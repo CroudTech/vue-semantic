@@ -1,6 +1,6 @@
 <template>
     <div :class="modalClasses">
-        <i v-if="canClose" class="close icon"></i>
+        <i v-if="showCloseIcon" class="close icon"></i>
         <slot name="header">
             <div v-if="title" class="header" v-html="title"></div>
         </slot>
@@ -70,9 +70,10 @@
         },
 
         computed: {
-            canClose()
+            // closeable is closable in semantic ui
+            showCloseIcon()
             {
-                return this.settings && this.settings.closeable && this.settings && this.settings.closeable_button
+                return this.settings && this.settings.closable_button || this.settings.closeable_button
             },
             modalClasses() {
                 return {
@@ -99,6 +100,7 @@
         methods: {
             hide() {
                 this.$emit('input', false)
+                this.$emit('close-modal', false)
             },
         },
 

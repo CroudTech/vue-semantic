@@ -1,6 +1,6 @@
 <template>
     <div :class="checkboxClasses">
-        <input :name="name" type="checkbox" v-model="checkboxValue" @change="notify">
+        <input :name="name" type="checkbox" v-model="checkboxValue" @change="notify" :disabled="this.disabled">
         <label @click="toggle">{{ ( model && labelChecked ? labelChecked : label) }}</label>
     </div>
 </template>
@@ -35,11 +35,12 @@
         methods : {
             notify(event) {
                 this.$nextTick(() => {
-                    this.$emit('checkbox-clicked', !event.srcElement.checked, event);
-                    this.$emit('input', event.srcElement.checked);
+                    this.$emit('checkbox-clicked', !event.target.checked, event);
+                    this.$emit('input', event.target.checked);
                 })
             },
             toggle(e) {
+                if (!this.disabled)
                 this.$emit('input', !this.checkboxValue);
             }
         }
