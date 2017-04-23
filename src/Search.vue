@@ -1,7 +1,8 @@
 <template>
     <div class="ui search">
-        <div class="ui input">
+        <div :class="searchClasses">
             <input class="prompt" type="text" :placeholder="placeholder">
+            <slot></slot>
         </div>
         <div class="results"></div>
     </div>
@@ -27,13 +28,6 @@
                 }
             },
             auth: {
-                coerce (val) {
-                    return $.extend({
-                        token: false,
-                        type: 'Bearer',
-                        headerKey: 'Authorization',
-                    }, val);
-                },
                 default() {
                     return {
                         token: false,
@@ -42,6 +36,9 @@
                     }
                 },
             },
+            action: {},
+            fluid: {},
+            disabled: {},
         },
 
         mounted() {
@@ -60,8 +57,8 @@
                     url: this.url,
                     onResponse: this.sanitize,
                     beforeXHR (xhr) {
-                        if($this.auth.token !== false) {
-                            xhr.setRequestHeader ($this.auth.headerKey, `${$this.auth.type} ${$this.auth.token}`);
+                        if($this.computedAuth.token !== false) {
+                            xhr.setRequestHeader ($this.computedAuth.headerKey, `${$this.computedAuth.type} ${$this.computedAuth.token}`);
                         }
                         return xhr
                     },
@@ -70,6 +67,25 @@
             }
 
             $(this.$el).search(searchOptions)
+        },
+        computed: {
+            computedAuth() {
+                return $.extend({
+                        token: false,
+                        type: 'Bearer',
+                        headerKey: 'Authorization',
+                    }, this.auth);
+            },
+            searchClasses() {
+                return {
+                    ui: true,
+                    input: true,
+                    action: typeof this.action !== 'undefined' ? true : false,
+                    fluid: typeof this.fluid !== 'undefined' ? true : false,
+                    icon: typeof this.icon !== 'undefined' ? true : false,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled === true ? true : false,
+                }
+            },
         }
     }
 </script>

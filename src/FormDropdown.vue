@@ -5,7 +5,7 @@
         <i class="dropdown icon"></i>
         <div class="menu dropdown_menu">
             <slot></slot>
-            <div v-for="option in items" class="item" :data-value="option.id" :data-text="option.name">{{ option.name}}</div>
+            <div v-for="option in items" class="item" :data-value="option.id" :data-text="option.name">{{ option.name }}</div>
         </div>
     </div>
 </template>
