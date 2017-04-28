@@ -70,9 +70,10 @@
         },
 
         computed: {
+            // closeable is closable in semantic ui
             canClose()
             {
-                return this.settings && this.settings.closeable && this.settings && this.settings.closeable_button
+                return this.settings && this.settings.closable && this.settings && this.settings.closable_button
             },
             modalClasses() {
                 return {

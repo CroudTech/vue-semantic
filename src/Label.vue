@@ -26,7 +26,7 @@
                     basic: typeof this.basic !== 'undefined',
                     circular: typeof this.circular !== 'undefined',
                     floating: typeof this.floating !== 'undefined',
-                    tag: typeof this.tag !== 'undefined',
+                    tag: typeof this.tag !== 'undefined' && this.tag,
                     label: true,
                 }
 
@@ -37,18 +37,17 @@
                 if (typeof this.size !== 'undefined') {
                     classes[this.size] = true
                 }
-
-                if (typeof this.pointing !== 'undefined') {
+                if (typeof this.pointing !== 'undefined' && this.pointing) {
                     classes['pointing'] = true
                     classes[this.pointing] = true
                 }
 
-                if (typeof this.corner !== 'undefined') {
+                if (typeof this.corner !== 'undefined' && this.corner) {
                     classes[this.corner] = true
                     classes['corner'] = true
                 }
 
-                if (typeof this.ribbon !== 'undefined') {
+                if (typeof this.ribbon !== 'undefined' && this.ribbon) {
                     classes[this.ribbon] = true
                     classes['ribbon'] = true
                 }
