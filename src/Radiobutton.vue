@@ -42,6 +42,7 @@
 
         methods: {
             toggle(value) {
+                if (!this.disabled)
                 this.radioValue = value
             }
         },

@@ -19,9 +19,7 @@
             placeholder: {
                 default: 'Search...',
             },
-            fields: {
-                default: {}
-            },
+            fields: {},
             sanitize: {
                 default: function(response) {
                     return response
