@@ -99,6 +99,7 @@
         methods: {
             hide() {
                 this.$emit('input', false)
+                this.$emit('close-modal', false)
             },
         },
 
