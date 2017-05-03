@@ -50,7 +50,7 @@
             dropdownClasses() {
                 return {
                     ui: true,
-                    selection: true,
+                    selection: !(typeof this.inline !== 'undefined' && this.inline),
                     dropdown: true,
                     search: typeof this.search !== 'undefined' && this.search,
                     fluid: typeof this.fluid !== 'undefined' && this.fluid,
