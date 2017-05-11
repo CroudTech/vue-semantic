@@ -35,8 +35,8 @@
         methods : {
             notify(event) {
                 this.$nextTick(() => {
-                    this.$emit('checkbox-clicked', !event.srcElement.checked, event);
-                    this.$emit('input', event.srcElement.checked);
+                    this.$emit('checkbox-clicked', !event.target.checked, event);
+                    this.$emit('input', event.target.checked);
                 })
             },
             toggle(e) {
