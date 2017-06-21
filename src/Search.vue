@@ -1,7 +1,7 @@
 <template>
     <div class="ui search">
         <div :class="searchClasses">
-            <input class="prompt" type="text" :placeholder="placeholder">
+            <input :name="name" class="prompt" type="text" :placeholder="placeholder" v-model="value">
             <slot></slot>
         </div>
         <div class="results"></div>
@@ -9,8 +9,21 @@
 </template>
 
 <script>
+    import _ from 'underscore'
+
     export default {
+        model: {
+            prop: 'model',
+            event: 'input'
+        },
+        data() {
+            return {
+                value: this.model,
+            }
+        },
         props: {
+            name: {},
+            model: {},
             url: {},
             local: {},
             searchDelay: {
@@ -19,14 +32,18 @@
             placeholder: {
                 default: 'Search...',
             },
-            fields: {},
+            fields: {
+                type : Object,
+                default: () => {}
+            },
             sanitize: {
                 default: function(response) {
                     return response
                 }
             },
             auth: {
-                default() {
+                type: Object,
+                default: () => {
                     return {
                         token: false,
                         type: 'Bearer',
@@ -37,17 +54,20 @@
             action: {},
             fluid: {},
             disabled: {},
-            icon: {}
+            settings : {
+                type : Object,
+                default: () => {}
+            }
         },
 
         mounted() {
             const $this = this,
-                searchOptions = {
+                searchOptions = _.extend({}, {
                     onSelect(result) {
                         $this.$emit('select', result)
                     },
                     searchDelay: this.searchDelay,
-                }
+                }, this.settings)
 
             if (typeof this.local !== 'undefined') {
                 searchOptions.source = this.local
@@ -79,12 +99,20 @@
                 return {
                     ui: true,
                     input: true,
-                    action: typeof this.action !== 'undefined' && this.action,
-                    fluid: typeof this.fluid !== 'undefined'  && this.fluid,
-                    icon: typeof this.icon !== 'undefined' && this.icon,
-                    disabled: typeof this.disabled !== 'undefined' && this.disabled,
+                    action: typeof this.action !== 'undefined' ? true : false,
+                    fluid: typeof this.fluid !== 'undefined' ? true : false,
+                    icon: typeof this.icon !== 'undefined' ? true : false,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled === true ? true : false,
                 }
             },
-        }
+        },
+        watch: {
+            value() {
+                this.$emit('input', this.value)
+            },
+            model() {
+                this.value = this.model
+            }
+        },
     }
 </script>
