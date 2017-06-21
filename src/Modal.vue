@@ -3,7 +3,6 @@
         <i v-if="showCloseIcon" class="close icon"></i>
         <slot name="header">
             <div v-if="title" class="header" v-html="title"></div>
-             {{ showCloseIcon }}
         </slot>
         <div :class="contentClasses">
             <div v-if="icon" class="ui medium image">
