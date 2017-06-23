@@ -10,7 +10,13 @@
 </template>
 
 <script>
+    /**
+     * Wrapper for the Semantic Reveal
+     *
+     * @example ./SemanticReveal.md
+     * @see https://semantic-ui.com/elements/reveal.html
+     */
     export default {
-        
+        name: 'semantic-reveal',
     }
 </script>

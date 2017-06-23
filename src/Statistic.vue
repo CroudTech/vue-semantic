@@ -13,13 +13,45 @@
 </template>
 
 <script>
+    /**
+     * Wrapper for the Seamntic statistic view
+     *
+     * @example ./SemanticStatistic.md
+     * @see https://semantic-ui.com/views/statistic.html
+     */
     export default {
+        name: 'semantic-statistic',
+
         props: {
-            colour: {},
-            icon: {},
-            inverted: {},
-            size: {},
+            /**
+             * Colour of the statistic
+             */
+            colour: {
+                type: String,
+            },
+            /**
+             * Add Icon to statistic
+             */
+            icon: {
+                type: String,
+            },
+            /**
+             * Invert the colours
+             */
+            inverted: {
+                type: Boolean,
+            },
+            /**
+             * Size of the text in that stats box
+             */
+            size: {
+                type: String,
+            },
+            /**
+             * Statistic label
+             */
             label: {
+                type: String,
                 required: true,
             },
         },
