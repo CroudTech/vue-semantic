@@ -11,10 +11,29 @@
 </template>
 
 <script>
+    /**
+     * Wrapper for the Semantic UI Accordion
+     *
+     * @see https://semantic-ui.com/modules/accordion.html
+     * @example ./SemanticAccordion.md
+    */
+
     export default {
+        name: 'SemanticAccordion',
+
         props: {
-            items: {},
+            /**
+             *  A list of Items to display in the Accordion
+             */
+            items: {
+                type: Array,
+                required: true,
+            },
+            /**
+             *  Open the last Item in the Accordion by default as opposed to the first
+             */
             openLast: {
+                type: Boolean,
                 default: false,
             },
             styled: {
@@ -23,6 +42,10 @@
             fluid: {
                 default: true,
             },
+            /**
+             * Additional Config options
+             * @see See [Docs] (https://semantic-ui.com/modules/accordion.html#/settings)
+             */
             settings: {
                 type: Object,
                 default() {

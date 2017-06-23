@@ -6,17 +6,51 @@
 </template>
 
 <script>
+    /**
+    * Simple Semanitc Checkbox
+    *
+    * @example ./SemanticCheckbox.md
+    */
+
     export default {
+        name: 'SemanticCheckbox',
+
         model: {
             prop: 'model'
         },
         props: {
-            model: {},
-            label: {},
+            /**
+             * v-model to attach input to
+             */
+            model: {
+                type: Boolean,
+            },
+            /**
+             * Checkbox label
+             */
+            label: {
+                type: String,
+            },
+            /**
+             * @ignore
+             */
             labelChecked: {},
+            /**
+             * Disable the checkbox
+             */
             disabled: {},
-            type: {},
-            name: {},
+            /**
+             * Change the type of the checkbox
+             */
+            type: {
+                type: String,
+            },
+            /**
+             * Set input's Name Attr
+             */
+            name: {
+                type: String,
+            },
         },
         computed: {
             checkboxClasses() {
