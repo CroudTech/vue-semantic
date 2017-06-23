@@ -13,16 +13,40 @@
 <script>
     import _ from 'underscore'
 
+    /**
+     * Wrapper for the semantic-ui dropdown
+     * @example ./SemanticFormDropdown.md
+     */
     export default {
+        name: 'SemanticFormDropdown',
+
         props: {
+            /**
+             * List of Dropdown Options
+             */
             options: {
                 required: true,
+                type: Array,
             },
+            /**
+             * v-model for the dropdown
+             */
             value: {
                 required: true,
             },
-            placeholder: {},
+            /**
+             * Dropdown placeholder
+             */
+            placeholder: {
+                type: String,
+            },
+            /**
+             * Dropdown name attribute
+             */
             name: {},
+            /**
+             * Takes up the full width
+             */
             fluid: {},
             search: {},
             inline: {},
@@ -40,6 +64,11 @@
             title_field: {
                 default: 'name',
             },
+
+            /**
+             * Additional config options
+             * @see See [Docs] (https://semantic-ui.com/modules/dropdown.html#/settings)
+             */
             settings : {
                 type : Object,
                 default: () => {}
