@@ -23,7 +23,7 @@
                 return {
                     ui: true,
                     checkbox: true,
-                    disabled: typeof this.disabled !== 'undefined' && this.disabled,
+                    disabled: typeof this.disabled !== 'undefined',
                     slider: this.type === 'slider',
                     toggle: this.type === 'toggle',
                 }
@@ -35,8 +35,8 @@
         methods : {
             notify(event) {
                 this.$nextTick(() => {
-+                   this.$emit('checkbox-clicked', !event.target.checked, event);
-+                   this.$emit('input', event.target.checked);
+                    this.$emit('checkbox-clicked', !event.target.checked, event);
+                    this.$emit('input', event.target.checked);
                 })
             },
             toggle(e) {

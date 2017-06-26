@@ -14,7 +14,7 @@ module.exports = {
         Vue.component('semantic-radiobutton', require('./src/Radiobutton.vue'));
         Vue.component('semantic-reveal', require('./src/Reveal.vue'));
         Vue.component('semantic-search', require('./src/Search.vue'));
-        Vue.component('semantic-statistic', require('./src/Statistic.vue')); 
-        Vue.component('semantic-pagination', require('./src/Pagination.vue')); 
+        Vue.component('semantic-statistic', require('./src/Statistic.vue'));
+        Vue.component('semantic-example', require('./src/ElementExample.vue'));  
     },
 }

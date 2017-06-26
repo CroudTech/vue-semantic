@@ -5,7 +5,7 @@
         <i class="dropdown icon"></i>
         <div class="menu dropdown_menu">
             <slot></slot>
-            <div v-for="option in items" class="item" :data-value="option.id" :data-text="option.name">{{ option.name }}</div>
+            <div v-for="option in items" class="item" :data-value="option.id" :data-text="option.name">{{ option.name}}</div>
         </div>
     </div>
 </template>
@@ -50,13 +50,13 @@
             dropdownClasses() {
                 return {
                     ui: true,
-                    selection: !(typeof this.inline !== 'undefined' && this.inline),
+                    selection: typeof this.inline !== 'undefined' ? false : true,
                     dropdown: true,
-                    search: typeof this.search !== 'undefined' && this.search,
-                    fluid: typeof this.fluid !== 'undefined' && this.fluid,
-                    multiple: typeof this.multiple !== 'undefined' && this.multiple,
-                    inline: typeof this.inline !== 'undefined' && this.inline,
-                    disabled: typeof this.disabled !== 'undefined' && this.disabled
+                    search: typeof this.search !== 'undefined' ? true : false,
+                    fluid: typeof this.fluid !== 'undefined' ? true : false,
+                    multiple: typeof this.multiple !== 'undefined' ? true : false,
+                    inline: typeof this.inline !== 'undefined' ? true : false,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled === true ? true : false,
                 }
             },
 

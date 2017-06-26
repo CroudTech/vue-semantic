@@ -73,7 +73,7 @@
             // closeable is closable in semantic ui
             showCloseIcon()
             {
-                return this.settings.closable_button
+                return this.settings && this.settings.closable_button || this.settings.closeable_button
             },
             modalClasses() {
                 return {
@@ -100,6 +100,7 @@
         methods: {
             hide() {
                 this.$emit('input', false)
+                this.$emit('close-modal', false)
             },
         },
 
