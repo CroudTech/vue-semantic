@@ -15,6 +15,5 @@ module.exports = {
         Vue.component('semantic-reveal', require('./src/Reveal.vue'));
         Vue.component('semantic-search', require('./src/Search.vue'));
         Vue.component('semantic-statistic', require('./src/Statistic.vue'));
-        Vue.component('semantic-example', require('./src/ElementExample.vue'));  
     },
 }
