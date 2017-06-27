@@ -6,8 +6,13 @@ Work In Progress. Any PRs welcome.
 ## Installation
 You can use NPM to install this package
 ```bash
-npm install --save https://github.com/CroudSupport/vue-semantic.git
+npm install --save croud-vue-semantic
 ```
+or Yarn 
+```bash
+yarn add croud-vue-semantic
+```
+
 Install the plugin
 ```js
 Vue.use(require('vue-semantic'))
