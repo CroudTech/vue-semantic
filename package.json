@@ -1,5 +1,5 @@
 {
-  "name": "vue-semantic",
+  "name": "croud-vue-semantic",
   "version": "0.0.7",
   "description": "Vue Components for the semantic ui library",
   "main": "vue-semantic.js",
