@@ -3,6 +3,9 @@ A collection of vue components for integrating the semantic ui library
 ## Contributing
 Work In Progress. Any PRs welcome.
 
+## Vue 1?
+If you still need the Vue 1 version of this lib you can use the vue1 branch or 0.0.7 tag
+
 ## Installation
 You can use NPM to install this package
 ```bash
