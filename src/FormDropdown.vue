@@ -94,8 +94,8 @@
         },
 
         watch: {
-            if (!this.autoUpdate) return
             value() {
+                if (!this.autoUpdate) return
                 this.$nextTick(() => {
                     this.loadDropdown()
                 })
