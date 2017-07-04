@@ -43,7 +43,10 @@
             settings : {
                 type : Object,
                 default: () => {}
-            }
+            },
+            autoUpdate: {
+                default: true,
+            },
         },
 
         computed: {
@@ -91,6 +94,7 @@
         },
 
         watch: {
+            if (!this.autoUpdate) return
             value() {
                 this.$nextTick(() => {
                     this.loadDropdown()
