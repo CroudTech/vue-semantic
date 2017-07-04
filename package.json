@@ -1,6 +1,6 @@
 {
   "name": "croud-vue-semantic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue Components for the semantic ui library",
   "main": "vue-semantic.js",
   "browserify": {
