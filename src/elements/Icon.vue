@@ -21,10 +21,10 @@
         computed: {
             iconClasses() {
                 const classes = {
-                    bordered: typeof this.bordered !== 'undefined',
-                    fitted: typeof this.fitted !== 'undefined',
-                    link: typeof this.link !== 'undefined',
-                    loading: typeof this.loading !== 'undefined',
+                    bordered: typeof this.bordered !== 'undefined' && this.bordered !== false,
+                    fitted: typeof this.fitted !== 'undefined' && this.fitted !== false,
+                    link: typeof this.link !== 'undefined' && this.link !== false,
+                    loading: typeof this.loading !== 'undefined' && this.loading !== false,
                     icon: true,
                 }
 

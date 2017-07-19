@@ -59,7 +59,7 @@
                     ui: true,
                     radio: true,
                     checkbox: true,
-                    disabled: typeof this.disabled !== 'undefined' && this.disabled,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled !== false,
                     slider: this.type === 'slider',
                     toggle: this.type === 'toggle',
                 }

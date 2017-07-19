@@ -24,9 +24,9 @@
                     loader: true,
                     text: this.text ? true : false,
                     active: this.active ? true : false,
-                    inline: typeof this.inline !== 'undefined' ? true : false,
-                    inverted: typeof this.inverted !== 'undefined' ? true : false,
-                    centered: typeof this.centered !== 'undefined' ? true : false,
+                    inline: typeof this.inline !== 'undefined' && this.inline !== false,
+                    inverted: typeof this.inverted !== 'undefined' && this.inverted !== false,
+                    centered: typeof this.centered !== 'undefined' && this.centered !== false,
                 }
 
                 if (this.size) {

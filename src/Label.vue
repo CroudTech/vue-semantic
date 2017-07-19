@@ -23,10 +23,10 @@
             labelClasses() {
                 const classes = {
                     ui: true,
-                    basic: typeof this.basic !== 'undefined',
-                    circular: typeof this.circular !== 'undefined',
-                    floating: typeof this.floating !== 'undefined',
-                    tag: typeof this.tag !== 'undefined',
+                    basic: typeof this.basic !== 'undefined' && this.basic !== false,
+                    circular: typeof this.circular !== 'undefined' && this.circular !== false,
+                    floating: typeof this.floating !== 'undefined' && this.floating !== false,
+                    tag: typeof this.tag !== 'undefined' && this.tag !== false,
                     label: true,
                 }
 
