@@ -55,11 +55,11 @@
                     ui: true,
                     selection: typeof this.inline !== 'undefined' ? false : true,
                     dropdown: true,
-                    search: typeof this.search !== 'undefined' ? true : false,
-                    fluid: typeof this.fluid !== 'undefined' ? true : false,
-                    multiple: typeof this.multiple !== 'undefined' ? true : false,
-                    inline: typeof this.inline !== 'undefined' ? true : false,
-                    disabled: typeof this.disabled !== 'undefined' && this.disabled === true ? true : false,
+                    search: typeof this.search !== 'undefined' && this.search !== false,
+                    fluid: typeof this.fluid !== 'undefined' && this.fluid !== false,
+                    multiple: typeof this.multiple !== 'undefined' && this.multiple !== false,
+                    inline: typeof this.inline !== 'undefined' && this.inline !== false,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled !== false,
                 }
             },
 

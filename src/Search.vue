@@ -99,10 +99,10 @@
                 return {
                     ui: true,
                     input: true,
-                    action: typeof this.action !== 'undefined' ? true : false,
-                    fluid: typeof this.fluid !== 'undefined' ? true : false,
-                    icon: typeof this.icon !== 'undefined' ? true : false,
-                    disabled: typeof this.disabled !== 'undefined' && this.disabled === true ? true : false,
+                    action: typeof this.action !== 'undefined' && this.action !== false,
+                    fluid: typeof this.fluid !== 'undefined' && this.fluid !== false,
+                    icon: typeof this.icon !== 'undefined' && this.icon !== false,
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled !== false,
                 }
             },
         },

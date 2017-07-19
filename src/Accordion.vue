@@ -42,8 +42,8 @@
                 return {
                     ui: true,
                     accordion: true,
-                    fluid: typeof this.fluid !== 'undefined' && this.fluid,
-                    styled: typeof this.styled !== 'undefined' && this.styled,
+                    fluid: typeof this.fluid !== 'undefined' && this.fluid !== false,
+                    styled: typeof this.styled !== 'undefined' && this.styled !== false,
                 }
             },
         }

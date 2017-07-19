@@ -23,7 +23,7 @@
                 return {
                     ui: true,
                     checkbox: true,
-                    disabled: typeof this.disabled !== 'undefined',
+                    disabled: typeof this.disabled !== 'undefined' && this.disabled !== false,
                     slider: this.type === 'slider',
                     toggle: this.type === 'toggle',
                 }
