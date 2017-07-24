@@ -54,6 +54,7 @@
             action: {},
             fluid: {},
             disabled: {},
+            icon: {},
             settings : {
                 type : Object,
                 default: () => {}
@@ -87,6 +88,7 @@
 
             $(this.$el).search(searchOptions)
         },
+
         computed: {
             computedAuth() {
                 return $.extend({
