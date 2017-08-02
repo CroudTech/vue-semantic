@@ -3,6 +3,7 @@ export default {
         return {
             showModal: false,
             dropdownVal: null,
+            checkbox: false,
         }
     },
 }

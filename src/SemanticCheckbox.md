@@ -1,54 +1,27 @@
-Checkbox:
+### Basic usage
 
-```
-    new Vue({
-        data() {
-            return {
-                pizza: true,
-            }
-        },
-        template: '<div><pre>Pizza: {{pizza}}</pre><semantic-checkbox v-model="pizza" label="🍕 Pizza" /></div>'
-    })
-```
+    <semantic-checkbox v-model="checkbox" label="🍕 Pizza" />
 
-```html
-    <semantic-checkbox v-model="pizza" label="🍕 Pizza" />
-```
+### Styling
+Pass through the **type** prop to change the style of checkbo
 
-Slider:
+    <div class="ui form">
+        <div class="ui field">
+            <semantic-checkbox v-model="checkbox" label="Checkbox" />
+        </div>
+        <div class="ui field">
+            <semantic-checkbox v-model="checkbox" label="Slider" type="slider"/>
+        </div>
+        <div class="ui field">
+            <semantic-checkbox v-model="checkbox" label="Toggle" type="toggle" />
+        </div>
+    </div>
 
-```
-    new Vue({
-        data() {
-            return {
-                love: false,
-            }
-        },
-        template: '<div><pre>Love: {{love}}</pre><semantic-checkbox v-model="love" label="❤️ Love" type="slider" /></div>'
-    })
-```
+### Disabled
 
-```html
-    <semantic-checkbox v-model="love" label="❤️ Love" type="slider"/>
-```
+    <semantic-checkbox label="🍕 Pizza" type="toggle" :disabled="true"/>
 
-Toggle:
+### Events
+This component emits the **checkbox-clicked** event evert time the event is clicked
 
-```
-    new Vue({
-        data() {
-            return {
-                fire: true,
-            }
-        },
-        template: '<div><pre>Fire: {{fire}}</pre><semantic-checkbox v-model="fire" label="🔥 Fire" type="toggle" /></div>'
-    })
-```
-
-```html
-    <semantic-checkbox v-model="fire" label="🔥 Fire" type="toggle" />
-```
-
-Disabled:
-
-    <semantic-checkbox label="🔥 Fire" type="toggle" :disabled="true"/>
+    <semantic-checkbox label="🍕 Pizza" type="toggle" @checkbox-clicked="(val) => { console.log(val) }"/>

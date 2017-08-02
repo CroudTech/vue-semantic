@@ -13,7 +13,7 @@
     */
 
     export default {
-        // name: 'semantic-checkbox',
+        name: 'semantic-checkbox',
 
         model: {
             prop: 'model'
