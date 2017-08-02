@@ -12,39 +12,127 @@
 
 <script>
     import _ from 'underscore'
-
+    
+    /**
+     * Semantic Dropdown optimised for use in Forms
+     * 
+     * @see https://semantic-ui.com/modules/dropdown.html#/definition
+     * @example ./SemanticFormDropdown.md
+     */
     export default {
+        name: 'semantic-form-dropdown',
+
         props: {
+            /**
+             * Dropdown options
+             */
             options: {
+                type: Array,
                 required: true,
             },
+            
+            /**
+             * v-model alias
+             */
             value: {
+                type: String | Number,
                 required: true,
             },
-            placeholder: {},
-            name: {},
-            fluid: {},
-            search: {},
-            inline: {},
-            multiple: {},
-            disabled: {},
+
+            /**
+             * Placeholder text
+             */
+            placeholder: {
+                type: String,
+                default: '',
+            },
+
+            /**
+             * Input name attribute
+             */
+            name: {
+                type: String,
+                default: '',
+            },
+            
+            /**
+             * Fluid styling flag
+             */
+            fluid: {
+                type: Boolean,
+            },
+
+            /**
+             * Search dropdown flag
+             */
+            search: {
+                type: Boolean,
+            },
+
+            /**
+             * Inline styling flag
+             */
+            inline: {
+                type: Boolean,
+            },
+
+            /**
+             * Multiple dropdown flag
+             */
+            multiple: {
+                type: Boolean,
+            },
+
+            /**
+             * Disabled dropdown flag
+             */
+            disabled: {
+                type: Boolean,
+            },
+
+            /**
+             * Allow full text search in dropdown
+             */
             full_text_search : {
+                type: Boolean,
                 default : false
             },
+
+            /**
+             * Allow additions on multiple dropdowns
+             */
             allow_additions : {
                 default : false
             },
+
+            /**
+             * Field of options objects to use as the **value**
+             */
             value_field: {
                 default: 'id',
             },
+
+            /**
+             * Field of options objects to show in the dropdown as the **text**
+             */
             title_field: {
                 default: 'name',
             },
+
+            /**
+             * Additional semantic dropdown settings
+             * @see https://semantic-ui.com/modules/dropdown.html#/settings 
+             */
             settings : {
                 type : Object,
                 default: () => {}
             },
+
+            /**
+             * Update the dropdown if the v-model or options change 
+             */
             autoUpdate: {
+                type: Boolean,
                 default: true,
             },
         },

@@ -29,34 +29,76 @@
 <script>
     import _ from 'underscore'
 
+
+    /**
+     * Semantic Modal Component
+     * @example ./SemanticModal.md
+     */
     export default {
+        name: 'semantic-modal',
+
         model: {
             prop: 'active',
         },
 
         props: {
+            /**
+             * The title displayed in the top bar of the modal
+             */
             title: {
                 type: String,
             },
+
+            /**
+             * The size of the modal
+             * @see https://semantic-ui.com/modules/modal.html#size
+             */
             size: {
                 type: String,
             },
+
+            /**
+             * Show image content
+             * @see https://semantic-ui.com/modules/modal.html#image-content
+             */
             icon: {
                 type: String,
             },
+
+            /**
+             * State of the modal, alias for v-model
+             */
             active: {
                 type: Boolean,
                 default: false,
             },
+
+            /**
+             * Pass through function to show and handle **Continue** CTA button
+             */
             approve: {
                 type: Function,
             },
+
+            /**
+             * Pass through function to show and handle **Cancel** button
+             */
             deny: {
                 type: Function,
             },
+
+            /**
+             * Whether any change in modal DOM should automatically refresh cached positions
+             */
             observeChanges: {
+                type: Boolean,
                 default: true,
             },
+
+            /**
+             * Additional custom settings
+             * @see https://semantic-ui.com/modules/modal.html#/settings
+             */
             settings : {
                 type: Object,
                 default: () => {}
