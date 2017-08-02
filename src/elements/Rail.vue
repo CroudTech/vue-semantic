@@ -20,10 +20,10 @@
             railClasses() {
                 const classes = {
                     ui: true,
-                    internal: typeof this.internal !== 'undefined',
-                    very: typeof this.very !== 'undefined',
-                    close: typeof this.close !== 'undefined',
-                    divided: typeof this.divided !== 'undefined',
+                    internal: typeof this.internal !== 'undefined' && this.internal !== false,
+                    very: typeof this.very !== 'undefined' && this.very !== false,
+                    close: typeof this.close !== 'undefined' && this.close !== false,
+                    divided: typeof this.divided !== 'undefined' && this.divided !== false,
                     rail: true,
                 }
 
