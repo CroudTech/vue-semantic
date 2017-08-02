@@ -12,7 +12,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styleguide": "node_modules/vue-styleguidist/bin/styleguidist.js server server",
-    "styleguide:build": "node_modules/vue-styleguidist/bin/styleguidist.js server build"
+    "styleguide:build": "node_modules/vue-styleguidist/bin/styleguidist.js build"
   },
   "repository": {
     "type": "git",
