@@ -19,7 +19,7 @@
     */
 
     export default {
-        name: 'SemanticAccordion',
+        // name: 'semantic-accordion',
 
         props: {
             /**

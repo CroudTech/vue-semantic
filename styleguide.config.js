@@ -20,4 +20,8 @@ module.exports = {
       })
     ],
   },
+  styleguideDir: 'docs',
+  mixins: [
+    'src/utils/Styleguidist.js',
+  ],
 };
