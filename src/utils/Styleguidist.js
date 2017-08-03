@@ -4,6 +4,7 @@ export default {
             showModal: false,
             dropdownVal: null,
             checkbox: false,
+            radio: 1,
         }
     },
 }
