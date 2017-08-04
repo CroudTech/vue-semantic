@@ -19,7 +19,7 @@
     */
 
     export default {
-        // name: 'semantic-accordion',
+        name: 'semantic-accordion',
 
         props: {
             /**
@@ -29,6 +29,7 @@
                 type: Array,
                 required: true,
             },
+            
             /**
              *  Open the last Item in the Accordion by default as opposed to the first
              */
@@ -36,15 +37,28 @@
                 type: Boolean,
                 default: false,
             },
+            
+            /**
+             * Create Styled accordion
+             * @see https://semantic-ui.com/modules/accordion.html#styled
+             */
             styled: {
+                type: Boolean,
                 default: true,
             },
+            
+            /**
+             * Create fluid accordion
+             * @see https://semantic-ui.com/modules/accordion.html#fluid
+             */
             fluid: {
+                type: Boolean,
                 default: true,
             },
+
             /**
              * Additional Config options
-             * @see See [Docs] (https://semantic-ui.com/modules/accordion.html#/settings)
+             * @see https://semantic-ui.com/modules/accordion.html#/settings
              */
             settings: {
                 type: Object,
