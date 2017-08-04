@@ -24,4 +24,5 @@ module.exports = {
   mixins: [
     'src/utils/Styleguidist.js',
   ],
+  title: 'Vue Semantic',
 };
