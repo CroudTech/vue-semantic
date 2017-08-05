@@ -1,4 +1,6 @@
 # vue-semantic
+http://croudsupport.github.io/vue-semantic/
+
 A collection of vue components for integrating the semantic ui library 
 ## Contributing
 Work In Progress. Any PRs welcome.
@@ -28,6 +30,9 @@ You will also need to include the semantic js and css files to your project. The
 <script src="semantic/dist/semantic.min.js"></script>
 ```
 For more advanced builds see http://semantic-ui.com/introduction/getting-started.html
+
+## Usage
+View our [docs](http://croudsupport.github.io/vue-semantic/) for usage examples
 
 ### Webpack Tips
 If you are using webpack, you can add jQuery to your webpack.base.conf.js
