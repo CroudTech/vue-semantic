@@ -1,5 +1,6 @@
 # vue-semantic
 [![npm version](https://badge.fury.io/js/croud-vue-semantic.svg)](https://badge.fury.io/js/croud-vue-semantic)
+
 http://croudsupport.github.io/vue-semantic/
 
 A collection of vue components for integrating the semantic ui library 
