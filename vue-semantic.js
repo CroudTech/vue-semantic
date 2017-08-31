@@ -1,19 +1,35 @@
-module.exports = {
+import accordion from './src/Accordion.vue'
+import checkbox from './src/Checkbox.vue'
+import column from './src/Column.vue'
+import divider from './src/Divider.vue'
+import dropdown from './src/Dropdown.vue'
+import formDropdown from './src/FormDropdown.vue'
+import label from './src/Label.vue'
+import loading from './src/Loading.vue'
+import message from './src/Message.vue'
+import modal from './src/Modal.vue'
+import popup from './src/Popup.vue'
+import radiobutton from './src/Radiobutton.vue'
+import reveal from './src/Reveal.vue'
+import search from './src/Search.vue'
+import statistic from './src/Statistic.vue'
+
+export default {
     install: function (Vue, options) {
-        Vue.component('semantic-accordion', require('./src/Accordion.vue'));
-        Vue.component('semantic-checkbox', require('./src/Checkbox.vue'));
-        Vue.component('semantic-column', require('./src/Column.vue'));
-        Vue.component('semantic-divider', require('./src/Divider.vue'));
-        Vue.component('semantic-dropdown', require('./src/Dropdown.vue'));
-        Vue.component('semantic-form-dropdown', require('./src/FormDropdown.vue'));
-        Vue.component('semantic-label', require('./src/Label.vue'));
-        Vue.component('semantic-loading', require('./src/Loading.vue'));
-        Vue.component('semantic-message', require('./src/Message.vue'));
-        Vue.component('semantic-modal', require('./src/Modal.vue'));
-        Vue.component('semantic-popup', require('./src/Popup.vue'));
-        Vue.component('semantic-radiobutton', require('./src/Radiobutton.vue'));
-        Vue.component('semantic-reveal', require('./src/Reveal.vue'));
-        Vue.component('semantic-search', require('./src/Search.vue'));
-        Vue.component('semantic-statistic', require('./src/Statistic.vue'));
+        Vue.component('semantic-accordion', accordion);
+        Vue.component('semantic-checkbox', checkbox)
+        Vue.component('semantic-column', column)
+        Vue.component('semantic-divider', divider)
+        Vue.component('semantic-dropdown', dropdown)
+        Vue.component('semantic-form-dropdown', formDropdown)
+        Vue.component('semantic-label', label)
+        Vue.component('semantic-loading', loading)
+        Vue.component('semantic-message', message)
+        Vue.component('semantic-modal', modal)
+        Vue.component('semantic-popup', popup)
+        Vue.component('semantic-radiobutton', radiobutton)
+        Vue.component('semantic-reveal', reveal)
+        Vue.component('semantic-search', search)
+        Vue.component('semantic-statistic', statistic)
     },
 }
