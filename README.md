@@ -22,7 +22,8 @@ yarn add croud-vue-semantic
 
 Install the plugin
 ```js
-Vue.use(require('croud-vue-semantic'))
+import VueSemantic from 'croud-vue-semantic'
+Vue.use(VueSemantic)
 ```
 
 You will also need to include the semantic js and css files to your project. The easiest way would be to include them in your html
