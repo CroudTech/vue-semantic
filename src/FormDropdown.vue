@@ -12,10 +12,10 @@
 
 <script>
     import _ from 'underscore'
-    
+
     /**
      * Semantic Dropdown optimised for use in Forms
-     * 
+     *
      * @see https://semantic-ui.com/modules/dropdown.html#/definition
      * @example ./SemanticFormDropdown.md
      */
@@ -30,7 +30,7 @@
                 type: Array,
                 required: true,
             },
-            
+
             /**
              * v-model alias
              */
@@ -54,7 +54,7 @@
                 type: String,
                 default: '',
             },
-            
+
             /**
              * Fluid styling flag
              */
@@ -121,7 +121,7 @@
 
             /**
              * Additional semantic dropdown settings
-             * @see https://semantic-ui.com/modules/dropdown.html#/settings 
+             * @see https://semantic-ui.com/modules/dropdown.html#/settings
              */
             settings : {
                 type : Object,
@@ -129,9 +129,17 @@
             },
 
             /**
-             * Update the dropdown if the v-model or options change 
+             * Update the dropdown if the v-model or options change
              */
             autoUpdate: {
+                type: Boolean,
+                default: true,
+            },
+
+            /**
+             * Reload the dropdown if options change
+             */
+            autoUpdateOptions: {
                 type: Boolean,
                 default: true,
             },
@@ -189,6 +197,7 @@
                 })
             },
             options() {
+                if (!this.autoUpdateOptions) return
                 this.$nextTick(() => {
                     this.loadDropdown()
                 })
